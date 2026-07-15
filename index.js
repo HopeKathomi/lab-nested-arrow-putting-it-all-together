@@ -23,10 +23,10 @@ function createLoginTracker(userInfo){
 
 const countAttempts = createLoginTracker(credentials);
 
-countAttempts("2")
-countAttempts("2")
-countAttempts("2")
-
+console.log(countAttempts("2"));
+console.log(countAttempts("2"));
+console.log(countAttempts("2"));
+console.log(countAttempts("2"));
 
 module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
