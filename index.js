@@ -7,23 +7,27 @@ function createLoginTracker(userInfo){
   let attemptCount = 0;
 
   let countAttempts = (passwordAttempt) =>{
-    passwordAttempt.forEach(pswd => {
-      attemptCount++;
-       if(pswd === userInfo.password && attemptCount <= 3){
-        console.log("Login successful");
-        return;
-      }else if (pswd!== userInfo.password && attemptCount <=3){
-         console.log("Login failed");
-      } else{
-        console.log("Account locked due to too many failed login attempts");
-      }
-    });
-   
+    attemptCount++;
+    if(passwordAttempt === userInfo.password && attemptCount <= 3){
+      console.log("Login successful");
+      return;
+    }else if (passwordAttempt !== userInfo.password && attemptCount <=3){
+      console.log("Login failed");
+      console.log("at: ", attemptCount);
+    } else{
+      console.log("Account locked due to too many failed login attempts");
+    }
   }
-  countAttempts(["123","1245", "password123", "abc"])
+  return countAttempts;
 }
 
-createLoginTracker(credentials)
+const countAttempts = createLoginTracker(credentials);
+
+countAttempts("1");
+countAttempts("password123");
+countAttempts("1");
+countAttempts("2");
+countAttempts("2");
 
 module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
