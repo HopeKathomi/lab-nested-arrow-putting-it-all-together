@@ -18,7 +18,7 @@ function createLoginTracker(userInfo){
       console.log("Login failed");
       
     } else{
-      console.log("Account locked due to too many failed login attempts");
+      return console.log("Account locked due to too many failed login attempts");
     }
   }
   return countAttempts;
@@ -26,6 +26,7 @@ function createLoginTracker(userInfo){
 
 const countAttempts = createLoginTracker(credentials);
 
+countAttempts("2")
 countAttempts("2")
 countAttempts("2")
 
