@@ -10,6 +10,7 @@ function createLoginTracker(userInfo){
     attemptCount++;
     if(passwordAttempt === userInfo.password && attemptCount <= 3){
       console.log("Login successful");
+      attemptCount = 0;
       return;
     }else if (passwordAttempt !== userInfo.password && attemptCount <=3){
       console.log("Login failed");
