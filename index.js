@@ -10,15 +10,15 @@ function createLoginTracker(userInfo){
     if(attemptCount >=3){
       return "Account locked due to too many failed login attempts";
     }
-
+    
     attemptCount++;
 
     if(passwordAttempt === userInfo.password && attemptCount <= 3){
       attemptCount = 0;
-      console.log("Login successful");      
+      return "Login successful";      
     }else if (passwordAttempt !== userInfo.password && attemptCount <=3){
       // console.log("atmpt no: ", attemptCount);
-      console.log("Login failed");      
+      return "Login failed";      
     } 
   }
   return countAttempts;
