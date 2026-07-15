@@ -20,7 +20,7 @@ function createLoginTracker(userInfo){
     });
    
   }
-  countAttempts(["123","1245","abc", "password123"])
+  countAttempts(["123","1245", "password123", "abc"])
 }
 
 createLoginTracker(credentials)
