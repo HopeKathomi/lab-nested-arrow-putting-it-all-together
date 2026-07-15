@@ -9,12 +9,14 @@ function createLoginTracker(userInfo){
   let countAttempts = (passwordAttempt) =>{
     attemptCount++;
     if(passwordAttempt === userInfo.password && attemptCount <= 3){
-      return console.log("Login successful");
       attemptCount = 0;
+      return console.log("Login successful");
+      
       
     }else if (passwordAttempt !== userInfo.password && attemptCount <=3){
-      return console.log("Login failed");
       console.log("at: ", attemptCount);
+      return console.log("Login failed");
+      
     } else{
       return console.log("Account locked due to too many failed login attempts");
     }
@@ -27,6 +29,7 @@ const countAttempts = createLoginTracker(credentials);
 countAttempts("1");
 countAttempts("password123");
 countAttempts("1");
+countAttempts("2");
 countAttempts("2");
 countAttempts("2");
 
