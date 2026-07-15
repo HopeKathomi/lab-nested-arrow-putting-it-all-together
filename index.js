@@ -11,7 +11,7 @@ function createLoginTracker(userInfo){
     if(passwordAttempt === userInfo.password && attemptCount <= 3){
       attemptCount = 0;
       console.log("Login successful");
-      
+      return;
       
     }else if (passwordAttempt !== userInfo.password && attemptCount <=3){
       console.log("atmpt no: ", attemptCount);
@@ -29,9 +29,7 @@ const countAttempts = createLoginTracker(credentials);
 countAttempts("1");
 countAttempts("password123");
 countAttempts("1");
-countAttempts("2");
-countAttempts("2");
-countAttempts("2");
+
 
 module.exports = {
   ...(typeof createLoginTracker !== 'undefined' && { createLoginTracker })
