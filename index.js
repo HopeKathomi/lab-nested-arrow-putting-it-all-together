@@ -16,6 +16,7 @@ function createLoginTracker(userInfo){
       console.log("at: ", attemptCount);
     } else{
       console.log("Account locked due to too many failed login attempts");
+      return;
     }
   }
   return countAttempts;
